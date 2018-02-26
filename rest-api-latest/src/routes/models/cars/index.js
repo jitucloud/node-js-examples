@@ -1,7 +1,7 @@
 const cars = require('express').Router({ mergeParams: true });
 const all = require('./all');
 const single = require('./single');
-const data = require('../../../data.json');
+const data = require('../../../../data.json');
 
 
 cars.get('/', all);

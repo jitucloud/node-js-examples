@@ -4,7 +4,7 @@ const models = require('express').Router();
 const all = require('./all');
 const single = require('./single');
 const cars = require('./cars');
-const data = require('../../data.json');
+const data = require('../../../data.json');
 
 models.get('/',all);
 models.get('/:modelId', single);
