@@ -13,7 +13,6 @@ models.use('/:modelId/cars', cars);
 
 models.param('modelId', (req, res, next, value) => {
   const model = data.models.find(m => m.id === (value * 1));
-
   if (model) {
     req['model'] = model;
     next();

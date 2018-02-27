@@ -1,9 +1,11 @@
+'use strict'
+
 var express = require('express');
 var airports = express.Router();
+const all = require('./all');
+const single = require('./single');
 
-var airportCntroller = require('../../controllers/airport');
-
-// airport Routes
-//airports.route('/').get(airportCntroller.get_all_airport_by_country);
+airports.get('/', all);
+airports.get('/:airportCode',  single);
 
 module.exports = airports;

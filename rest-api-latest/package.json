@@ -5,15 +5,22 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "dev-opener": "npm run open:dev && cross-env ENV=DEV PORT=3000 nodemon server.js",
+    "dev": "cross-env ENV=DEV PORT=3000 nodemon server.js",
+    "start": "cross-env ENV=PROD PORT=5000 node server.js",
+    "open:dev": "opener http://localhost:3000/models"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "got": "^8.2.0",
+    "node-fetch": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.15.1"
+    "cross-env": "^5.1.3",
+    "nodemon": "^1.15.1",
+    "opener": "^1.4.3"
   }
 }

@@ -6,7 +6,7 @@ const models = require('./models');
 const airports = require('./airports');
 
 routes.use('/models', models);
-//routes.use('/airports', airports);
+routes.use('/airports', airports);
 
 
 

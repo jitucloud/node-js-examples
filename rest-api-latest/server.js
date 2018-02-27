@@ -3,9 +3,10 @@
 const http = require('http');
 const app = require('./src/app');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+const API_ENV= process.env.ENV || 'DEV';
 var server = http.createServer(app);
 
-server.listen(port,()=>{
-    console.log('rest api server is running on:' + port)
+server.listen(PORT,()=>{
+    console.log(API_ENV + ' Rest api server is running on:' + PORT)
 });
