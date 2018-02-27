@@ -3,7 +3,7 @@
 const http = require('http');
 const app = require('./src/app');
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 const API_ENV= process.env.ENV || 'DEV';
 var server = http.createServer(app);
 

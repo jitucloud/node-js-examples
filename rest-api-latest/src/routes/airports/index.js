@@ -2,10 +2,9 @@
 
 var express = require('express');
 var airports = express.Router();
-const all = require('./all');
-const single = require('./single');
+const airportRoute = require('./airport-route');
 
-airports.get('/', all);
-airports.get('/:airportCode',  single);
+airports.get('/', airportRoute.getAllAirport);
+airports.get('/:airportCode', airportRoute.getAirportBycode);
 
 module.exports = airports;

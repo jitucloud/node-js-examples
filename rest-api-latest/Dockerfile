@@ -1,6 +1,6 @@
 FROM node
 # Create app directory
-#RUN mkdir -p /usr/src/app && mkdir -p /usr/src/app/src
+RUN mkdir -p /usr/src/app && mkdir -p /usr/src/app/src
 WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json server.js data.json /usr/src/app/
