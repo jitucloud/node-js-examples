@@ -5,20 +5,18 @@ const fetch = require('node-fetch');
 var memoize = require("memoizee");
 
 
-async function getAllAirport (){
-    const response =  await fetch('https://www.qantas.com.au/api/airports');
-    return response.json();
+async function callQantasApi(){
+    return (await fetch('https://www.qantas.com.au/api/airports')).json();
 }
 
 module.exports = {    
 
     getAllAirport: async function getAllAirport (){
-        const response =  await fetch('https://www.qantas.com.au/api/airports');
-        return response.json();
+        return await callQantasApi();
     },
 
     getAirportbyCode: async function getAirportbyCode(code){
-       const airportObject =  await getAllAirport();
+       const airportObject =  await callQantasApi();
        const airport = _.filter(airportObject.airports, function(airport) {
             return airport.code !== ' ' &&  airport.code.toLowerCase() === code.toLowerCase();
         });
